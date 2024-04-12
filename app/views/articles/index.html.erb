@@ -1,0 +1,15 @@
+<div class="navbar d-flex p-2 bg-light border">
+  <h1 class="fs-5 text-secondary">Wikinimous</h1>
+  <%= link_to "New Article", new_article_path, class:"text-secondary text-decoration-none" %>
+</div>
+
+<div class="container">
+  <ul class="list-group">
+    <% @articles.each do |article| %>
+      <li class="fs-3 list-group-item article-title"><%=link_to article.title, article_path(article), class:"text-decoration-none"%></li>
+      <li class="fs-5 list-group-item text-secondary text-decoration-none"><%= article.content %></li>
+      <br>
+    <% end %>
+  </ul>
+
+</div>
